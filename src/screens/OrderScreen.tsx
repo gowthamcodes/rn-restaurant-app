@@ -38,7 +38,7 @@ const OrderScreen = ({ navigation: { navigate } }: any) => {
   };
 
   const addToCart = (item: IMenu) => {
-    if (item.qty <= 20) {
+    if (item.qty < 20) {
       const modifiedOrder = orders.map((order: any) =>
         order.title === item.title ? { ...item, qty: item.qty + 1 } : order,
       );

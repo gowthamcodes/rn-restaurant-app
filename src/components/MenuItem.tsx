@@ -62,8 +62,13 @@ const MenuItem = ({
               <Text style={styles.quantity}>{item.qty}</Text>
               <TouchableOpacity
                 activeOpacity={0.8}
+                disabled={item.qty === 20}
                 onPress={() => handleAdd(item)}>
-                <Feather name={'plus'} color={Colors.PRIMARY} size={16} />
+                <Feather
+                  name={'plus'}
+                  color={item.qty === 20 ? Colors.GREY : Colors.PRIMARY}
+                  size={16}
+                />
               </TouchableOpacity>
             </View>
           ) : (
